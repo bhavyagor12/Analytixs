@@ -4,20 +4,21 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { loginFailure, loginSuccess, loginStart } from "../redux/userSlice";
 import { Navigate, useNavigate } from 'react-router-dom';
-import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai';
+import {AiOutlineEye, AiOutlineEyeInvisible, AiOutlineProfile, AiOutlineMail} from 'react-icons/ai';
 
 
 
 const Container = styled.div`
 display: flex;
-flex-direction: column;
-background: linear-gradient(rgba(255, 255, 255, 0.1),
-rgba(255, 255, 255, 0.3)),
-url('https://img.freepik.com/free-vector/high-school-concept-illustration_114360-8279.jpg?w=2000');
+/* flex-direction: column; */
+/* background: linear-gradient(rgba(255, 255, 255, 0.1),
+rgba(255, 255, 255, 0.3)), */
+/* url('https://img.freepik.com/free-vector/high-school-concept-illustration_114360-8279.jpg?w=2000'); */
 height: 100vh;
 align-items: center;
 justify-content: center;
-color: ${({ theme }) => theme.text}
+color: ${({ theme }) => theme.text};
+background-color: black;
 `;
 const Wrapper = styled.div`
 background-color: white;
@@ -36,13 +37,24 @@ font-size: 48px;
 const SubTitle = styled.h2`
 font-style: 20px;
 font-weight: 300;
+/* @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap'); */
+/* font-family: 'Lora', serif; */
 `;
 const Input = styled.input`
+border:none;
+border-radius:3px;
+background-color: transparent;
+
+outline:none;
+color: ${({ theme }) => theme.text}
+`;
+const Tags = styled.div`
 border:1px solid ${({ theme }) => theme.soft};
 border-radius:3px;
 background-color: transparent;
 padding:15px;
 outline:none;
+margin-bottom:5px;
 color: ${({ theme }) => theme.text}
 `;
 
@@ -54,6 +66,19 @@ font-weight: 500;
 cursor:pointer;
 background-color: ${({ theme }) => theme.soft};
 color: ${({ theme }) => theme.textSoft};
+`;
+
+const Divide1 = styled.div`
+display: flex;
+/* flex-direction: row; */
+flex:5;
+`;
+
+const Divide2 = styled.div`
+display: flex;
+/* background-color: black; */
+/* flex-direction: row; */
+flex:5;
 `;
 
 const Signin = () => {
@@ -99,16 +124,30 @@ const Signin = () => {
     return (
 
         <Container>
-
+            <Divide1>
+            <div>
             <Wrapper><Title>Login</Title>
                 <SubTitle>WELCOME TO SterLearn </SubTitle>
+                <Tags>
                 <Input placeholder="sapid" onChange={e => setSapid(e.target.value)} />
+                <AiOutlineProfile />
+                </Tags>
+                <Tags>
                 <Input placeholder="email" onChange={e => setEmail(e.target.value)} />
+                <AiOutlineMail />
+                </Tags>
+                <Tags>
                 <Input type={passwordShown ? "text" : "password"} placeholder="password" onChange={e => setPassword(e.target.value)} />
-                {passwordShown ? <AiOutlineEye size={30} onClick={togglePassword} /> : <AiOutlineEyeInvisible size={30} onClick={ togglePassword} />}
+                {passwordShown ? <AiOutlineEye onClick={togglePassword} /> : <AiOutlineEyeInvisible onClick={ togglePassword} />}
+                </Tags>
                 <Button onClick={handleLogin}>Sign in</Button>
-
+                
             </Wrapper>
+            </div>
+            </Divide1>
+            <Divide2>
+            <div>hello</div>
+            </Divide2>
 
         </Container>
 
