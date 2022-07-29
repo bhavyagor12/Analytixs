@@ -4,12 +4,14 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Homepage from "./pages/Homepage";
 function App() {
   return (
     <BrowserRouter>
     
     <Routes>
-      <Route path="/signin" element={<Signin/>} />
+    <Route path="/" element={<Homepage/>} />
+    <Route path="/signin" element={<Signin/>} />
     </Routes>
     </BrowserRouter>
   );
