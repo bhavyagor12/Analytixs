@@ -4,7 +4,7 @@ export const darkTheme = {
     text: "white",
     textSoft: "#aaaaaa",
     soft: "#373737",
-    span: "#0000ff"
+    span: "	#BF40BF"
   };
   export const lightTheme = {
     bg: "#ffffff",
@@ -12,5 +12,5 @@ export const darkTheme = {
     text: "black",
     textSoft: "#606060",
     soft: "#f5f5f5",
-    span: "#0000ff"
+    span: "#5D3FD3"
   };
