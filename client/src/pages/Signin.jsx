@@ -4,6 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { loginFailure, loginSuccess, loginStart } from "../redux/userSlice";
 import { Navigate, useNavigate } from 'react-router-dom';
+import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai';
 
 
 
@@ -60,6 +61,13 @@ const Signin = () => {
     const [sapid, setSapid] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [passwordShown, setPasswordShown] = useState(false);
+
+    const togglePassword = () => {
+        // When the handler is invoked
+        // inverse the boolean state of passwordShown
+        setPasswordShown(!passwordShown);
+      };
 
     const dispatch = useDispatch();
 
@@ -96,7 +104,8 @@ const Signin = () => {
                 <SubTitle>WELCOME TO SterLearn </SubTitle>
                 <Input placeholder="sapid" onChange={e => setSapid(e.target.value)} />
                 <Input placeholder="email" onChange={e => setEmail(e.target.value)} />
-                <Input type="password" placeholder="password" onChange={e => setPassword(e.target.value)} />
+                <Input type={passwordShown ? "text" : "password"} placeholder="password" onChange={e => setPassword(e.target.value)} />
+                {passwordShown ? <AiOutlineEye size={30} onClick={togglePassword} /> : <AiOutlineEyeInvisible size={30} onClick={ togglePassword} />}
                 <Button onClick={handleLogin}>Sign in</Button>
 
             </Wrapper>
