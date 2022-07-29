@@ -7,41 +7,39 @@ import trial from "../assets/trial.jpg"
 import { Link } from "react-router-dom"
 
 const Homepage = ({ darkMode, setDarkMode }) => {
-    return (
-        <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-            <Container>
-                <Header><ThemeSwitcher>{darkMode ? <BsMoon size={30} onClick={() => { setDarkMode(!darkMode) }} /> : <BsSun size={30} onClick={() => { setDarkMode(!darkMode) }} />}</ThemeSwitcher></Header>
-                <Main>
-                    <Left>
-                        <Title>ANALYTIX</Title>
-                        <Typing>Education is the movement from darkness to light.</Typing>
-                        <Text>
-                            <h1>A Place</h1>
-                            <h1>Every <span>Student</span> & <span>Teacher</span> </h1>
-                            <h1>Should Be<sub>•</sub></h1>
-                        </Text>
-                        <Subtitle>
-                            <h2><span>Education</span> is smart enough to change</h2>
-                            <h2>the human mind <span>positively!</span></h2>
-                        </Subtitle>
-                        <Link to="/signin" style={{ textDecoration: "none", color: "inherit" }}>
-                            <Button>
-                                Get Started
-                                <Icon><AiOutlineArrowRight size={20} /></Icon>
-                            </Button>
-                        </Link>
+  return (
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+      <Container>
+        <Header><ThemeSwitcher>{darkMode ? <BsMoon size={30} onClick={() => { setDarkMode(!darkMode) }} /> : <BsSun size={30} onClick={() => { setDarkMode(!darkMode) }} />}</ThemeSwitcher></Header>
+        <Main>
 
-
-                    </Left>
-                    <Right>
-
-                        {/* {darkMode ? <Image src={dark} alt="" /> : <Image src={white} alt="" />} */}
-                        <Image src={trial} alt="" />
-                    </Right>
-                </Main>
-            </Container>
-        </ThemeProvider >
-    )
+          <Left>
+            <Title>ANALYTIX</Title>
+            <Typing>Education is the movement from darkness to light.</Typing>
+            <Text>
+              <h1>A Place</h1>
+              <h1>Every <span>Student</span> & <span>Teacher</span> </h1>
+              <h1>Should Be<sub>•</sub></h1>
+            </Text>
+            <Subtitle>
+              <h2><span>Education</span> is smart enough to change</h2>
+              <h2>the human mind <span>positively!</span></h2>
+            </Subtitle>
+            <Link to="/signin" style={{ textDecoration: "none", color: "inherit" }}>
+              <Button>
+                Get Started
+                <Icon><AiOutlineArrowRight size={20} /></Icon>
+              </Button>
+            </Link>
+          </Left>
+          <Right>
+            {/* {darkMode ? <Image src={dark} alt="" /> : <Image src={white} alt="" />} */}
+            <Image src={trial} alt="" />
+          </Right>
+        </Main>
+      </Container>
+    </ThemeProvider >
+  )
 }
 
 export default Homepage
@@ -165,6 +163,7 @@ const Button = styled.button`
   gap: 5px;
   border-radius: 12px;
   margin-top: 25px;
+  cursor: pointer;
 :hover {
   background-color: ${({ theme }) => theme.text}; /* Green */
   color: ${({ theme }) => theme.soft};
