@@ -3,7 +3,7 @@ import { BsMoon, BsSun } from "react-icons/bs"
 import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from "../utils/Theme";
 import dark from "../assets/darkbg.png"
-
+import white from "../assets/whitebg.png"
 
 const Homepage = ({ darkMode, setDarkMode }) => {
     return (
@@ -12,10 +12,13 @@ const Homepage = ({ darkMode, setDarkMode }) => {
                 <Header><ThemeSwitcher>{darkMode ? <BsMoon size={30} onClick={() => { setDarkMode(!darkMode) }} /> : <BsSun size={30} onClick={() => { setDarkMode(!darkMode) }} />}</ThemeSwitcher></Header>
                 <Main>
                     <Left>
-                        <h1>HI</h1>
+                        <Text><h1>A Place</h1>
+                            <h1>Every <span>Student</span> </h1>
+                            <h1>Should be.</h1></Text>
+
                     </Left>
                     <Right>
-                        <Image src={dark} alt="" />
+                        {darkMode ? <Image src={dark} alt="" /> : <Image src={white} alt="" />}
                     </Right>
                 </Main>
             </Container>
@@ -61,6 +64,7 @@ flex: 6;
 
 const Right = styled.div`
 flex:4;
+padding: 10px;
 `
 
 const Image = styled.img`
@@ -68,3 +72,11 @@ const Image = styled.img`
     height: 100%;
     object-fit: contain;
 `
+
+const Text = styled.div`
+font-size: 40px;
+font-weight: 600;
+span{
+    color: ${({ theme }) => theme.span};
+}
+`  
