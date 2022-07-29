@@ -28,6 +28,7 @@ flex-direction:column;
 padding:50px 70px;
 border:2px solid ${({ theme }) => theme.soft};
 gap: 10px;
+margin-left: 20px;
 `;
 
 const Title = styled.h1`
