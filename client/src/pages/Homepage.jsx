@@ -3,8 +3,8 @@ import { BsMoon, BsSun } from "react-icons/bs"
 import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from "../utils/Theme";
 import { AiOutlineArrowRight } from "react-icons/ai"
-import trial from "../assets/trial.jpg"
-import { Link } from "react-router-dom"
+import trial from "../assets/trial.jpg";
+import { Link } from "react-router-dom";
 
 const Homepage = ({ darkMode, setDarkMode }) => {
   return (
@@ -12,7 +12,6 @@ const Homepage = ({ darkMode, setDarkMode }) => {
       <Container>
         <Header><ThemeSwitcher>{darkMode ? <BsMoon size={30} onClick={() => { setDarkMode(!darkMode) }} /> : <BsSun size={30} onClick={() => { setDarkMode(!darkMode) }} />}</ThemeSwitcher></Header>
         <Main>
-
           <Left>
             <Title>ANALYTIX</Title>
             <Typing>Education is the movement from darkness to light.</Typing>
@@ -183,7 +182,7 @@ const Typing = styled.div`
   overflow: hidden;
   border-right: 3px solid;
   font-family: monospace;
-  font-size: 34px;
+  font-size: 30px;
   margin-bottom: 10px;
 
 
