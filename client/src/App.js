@@ -13,6 +13,7 @@ import StudentDashboard from "./pages/Student/Dashboard";
 import TeacherDashboard from "./pages/Teacher/Dashboard";
 
 //Parent
+import ParentDashboard from "./pages/Parent/Dashboard";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -29,6 +30,10 @@ function App() {
     {/* teacher */}
     <Route path="/teacher" element={<TeacherDashboard darkMode={darkMode} setDarkMode={setDarkMode}/>} />
 
+
+    {/* parent */}
+    <Route path="/parent" element={<ParentDashboard darkMode={darkMode} setDarkMode={setDarkMode}/>} />
+    
     </Routes>
     </BrowserRouter>
    
