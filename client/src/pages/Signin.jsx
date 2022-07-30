@@ -169,12 +169,6 @@ const Signin = ({ darkMode, setDarkMode }) => {
     const [password, setPassword] = useState("");
     const [passwordShown, setPasswordShown] = useState(false);
 
-    const togglePassword = () => {
-        // When the handler is invoked
-        // inverse the boolean state of passwordShown
-        setPasswordShown(!passwordShown);
-      };
-
     const dispatch = useDispatch();
 
     const handleLogin = async (e) => {
@@ -226,7 +220,7 @@ const Signin = ({ darkMode, setDarkMode }) => {
                 </Tags>
                 <Tags>
                 <Input type={passwordShown ? "text" : "password"} placeholder="password" onChange={e => setPassword(e.target.value)} />
-                {passwordShown ? <Inputicon><AiOutlineEye onClick={togglePassword} color='black' /></Inputicon> : <Inputicon><AiOutlineEyeInvisible color='black' onClick={ togglePassword} /></Inputicon>}
+                {passwordShown ? <Inputicon><AiOutlineEye onClick={()=>{setPasswordShown(!passwordShown)}} color='black' /></Inputicon> : <Inputicon><AiOutlineEyeInvisible color='black' onClick={()=>{setPasswordShown(!passwordShown)}} /></Inputicon>}
                 </Tags>
                 <Button onClick={handleLogin}>LOGIN
                 <Icon><RiLoginBoxLine size={20} /></Icon>

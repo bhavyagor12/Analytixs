@@ -25,10 +25,6 @@ const UserSchema = new mongoose.Schema(
     profileimg: {
       type: "string",
     },
-    yearofgraduation: {
-      type: Number,
-      length: 4,
-    },
     typeofuser:{
       type: "string",
       required: true,
