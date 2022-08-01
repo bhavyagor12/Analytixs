@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import Sidebar from './StudentSidebar';
 import { darkTheme, lightTheme } from "../../utils/Theme";
 import Navbar from "../../components/Navbar"
+import Calendar from '../../components/Calendar';
 
 const Container = styled.div`
   display: flex;
@@ -26,6 +27,7 @@ const Dashboard = () => {
         <Main>
           <Navbar />
           <Wrapper>
+            <Calendar />
           </Wrapper>
         </Main>
 
