@@ -80,6 +80,7 @@ flex-direction: column;
 justify-content: center;
 margin-left: 10px;
 padding: 20px;
+gap:4px;
 
 `
 
@@ -112,7 +113,7 @@ text-transform: uppercase;
   animation: textclip 4s linear infinite;
   display: inline-block;
   font-size: 60px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 
 
 @keyframes textclip {
@@ -144,6 +145,7 @@ font-weight: 400;
 span{
     color: ${({ theme }) => theme.span};
 }
+margin-bottom: 20px;
 `
 
 const Button = styled.button`
