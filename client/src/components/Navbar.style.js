@@ -29,6 +29,7 @@ export const RightContainer = styled.div`
   justify-content:space-between;
   padding-right: 20px;
   align-items: center;
+  color: ${({ theme }) => theme.text};
 `;
 
 export const NavbarInnerContainer = styled.div`

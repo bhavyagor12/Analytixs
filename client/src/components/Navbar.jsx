@@ -21,6 +21,7 @@ const Search = styled.div`
   padding: 5px;
   border: 1px solid ${({ theme }) => theme.text};
   border-radius:3px;
+  color: ${({ theme }) => theme.text};
 
 `;
 const Input = styled.input`
@@ -41,17 +42,25 @@ const Icons = styled.div`
  border-radius: 50%;
  background-color:${({ theme }) => theme.soft} ;
  padding: 10px;
+ 
  `;
+const Icon = styled.div`
+ gap:5px;
+ display: flex;
+ `
 
 function Navbar() {
+
     const [extendNavbar, setExtendNavbar] = useState(false);
     const { user } = useSelector(state => state.user);
+
+
 
     return (
         <NavbarContainer extendNavbar={extendNavbar}>
             <NavbarInnerContainer>
                 <LeftContainer>
-                    <Text>Hello,<span> Chamber! </span> </Text>
+                    <Text>Hello,<span> {user?.name}! </span> </Text>
                     <Icons><MdOutlineWavingHand size={30} />    </Icons>
                 </LeftContainer>
                 <RightContainer>
@@ -61,8 +70,9 @@ function Navbar() {
                         />
                         <MdSearch size={20} />
                     </Search>
-                    <Icons><MdOutlineNotifications size={30} /></Icons>
-                    <Icons><AiOutlineSetting size={30} /></Icons>
+                    <Icon><Icons><MdOutlineNotifications size={30} /></Icons>
+                        <Icons><AiOutlineSetting size={30} /></Icons></Icon>
+
                 </RightContainer>
             </NavbarInnerContainer>
         </NavbarContainer>
