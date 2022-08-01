@@ -7,10 +7,12 @@ import Navbar from "../../components/Navbar"
 const Container = styled.div`
   display: flex;
 `;
+
 const Main = styled.div`
   flex: 7;
   background: ${({ theme }) => theme.soft};
 `;
+
 const Wrapper = styled.div`
 display: flex;
 align-items: center;
